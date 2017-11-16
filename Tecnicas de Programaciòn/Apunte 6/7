@@ -1,0 +1,12 @@
+#!/bin/bash
+
+for ((i = 0; i <= 4; i++)) {
+	read -p "Ingrese un número: " vector1[$i]
+}
+
+for ((i = 0; i <= 4; i++)) {
+	vector2[$i]=$((${vector1[$i]} * 2))
+	echo ${vector2[$i]}
+}
+
+exit 0

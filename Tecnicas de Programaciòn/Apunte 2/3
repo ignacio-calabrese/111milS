@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "Ingrese cual es su genero(M o F): " gender
+
+if [ $gender == "F" ]
+then
+	echo "Su género es Femenino"
+fi
+
+exit 0

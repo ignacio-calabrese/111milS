@@ -1,0 +1,33 @@
+#!/bin/bash
+
+read -p "Ingrese una letra que corresponda a un número romano: " character
+
+case $character in
+    "I")
+        echo "1"
+    ;;
+    "V")
+        echo "5"
+    ;;     
+    "X")
+        echo "10"
+    ;;
+    "L") 
+        echo "50"
+    ;;
+    "C") 
+        echo "100"
+    ;;
+    "D")
+        echo "500"
+    ;;
+    "M")
+        echo "1000"
+    ;;
+    *)
+        echo "ERROR No es un número romano válido"
+        exit 1
+    ;;
+esac
+
+exit 0

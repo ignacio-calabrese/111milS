@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "Ingrese un numero: " number
+
+if [ $number != 10 ]
+then
+	echo "El numero: no es 10!"
+fi
+
+exit 0

@@ -1,0 +1,56 @@
+#!/bin/bash
+
+read -p "Ingrese un caracter: " character
+
+case $character in
+    "0")
+        echo "El carácter es un número"
+    ;;
+    "1")
+        echo "El carácter es un número"
+    ;;
+    "2")
+        echo "El carácter es un número"
+    ;;
+    "3")
+        echo "El carácter es un número"
+    ;;
+    "4")
+        echo "El carácter es un número"
+    ;;
+    "5")
+        echo "El carácter es un número"
+    ;;
+    "6")
+        echo "El carácter es un número"
+    ;;
+    "7")
+        echo "El carácter es un número"
+    ;;
+    "8")
+        echo "El carácter es un número"
+    ;;
+    "9")
+        echo "El carácter es un número"
+    ;;
+    "a")
+        echo "El carácter es una vocal"
+    ;;
+    "e")
+        echo "El carácter es una vocal"
+    ;;
+    "i")
+        echo "El carácter es una vocal"
+    ;;
+    "o")
+        echo "El carácter es una vocal"
+    ;;
+    "u")
+        echo "El carácter es una vocal"
+    ;;
+    *)
+        echo "El carácter es una consonante"
+    ;;
+esac
+
+exit 0

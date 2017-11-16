@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "Ingrese su género(M o F): " gender
+read -p "Ingrese su edad: " age
+
+if [ $gender == "M" ] && (($age >= 18))
+then
+	echo "La persona es un hombre mayor de edad!"
+fi
+
+exit 0
+ 

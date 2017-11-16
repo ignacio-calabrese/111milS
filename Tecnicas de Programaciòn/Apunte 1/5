@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "Ingrese número1: " number1
+read -p "Ingrese número2: " number2
+
+RESULT=$(($number1 - $number2))
+
+echo "El resultado de la resta es: $RESULT"
+
+exit 0

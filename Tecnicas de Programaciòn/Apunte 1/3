@@ -1,0 +1,9 @@
+#!/bin/bash
+
+for((i = 0; i <= 4; i++)) { 
+    read -p "Ingrese un nùmero: " number[$i]
+ }  
+for((i = 4; i >= 0; i--)) { 
+    echo ${number[$i]}
+}
+exit 0

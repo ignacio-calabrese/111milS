@@ -1,0 +1,36 @@
+#!/bin/bash
+
+read -p "Ingrese primer número: " number1
+max=$number1
+min=$number1
+
+read -p "Ingrese segundo número: " number2
+if ((number2 > max))
+then
+	max=$number2
+else
+	min=$number2
+fi
+
+read -p "Ingrese tercer número: " number3
+if ((number3 > max))
+then
+	max=$number3
+elif ((number3 < min))
+then
+	min=$number3
+fi
+
+if ((number1 != max && number1 != min))
+then
+	mid=$number1
+elif ((number2 != max && number2 != min))
+then
+	mid=$number2
+else
+	mid=$number3
+fi
+
+echo "El orden de menor a mayor es: $min < $mid < $max"
+
+exit 0

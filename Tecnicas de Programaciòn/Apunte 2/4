@@ -1,0 +1,17 @@
+#!/bin/bash
+
+for((i = 0; i <= 3; i++)) { 
+    read -p "Ingrese un número: " number[$i]  
+}
+
+if [ ${number[0]} == ${number[1]} ]
+then
+	echo "Hay igualdad 1-2"
+fi
+
+if [ ${number[2]} == ${number[3]} ]
+then
+    echo "Hay igualdad 3-4"
+fi
+
+exit 0

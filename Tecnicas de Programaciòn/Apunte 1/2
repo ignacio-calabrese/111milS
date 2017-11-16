@@ -1,0 +1,15 @@
+#!/bin/bash
+
+read -p "Ingrese su DNI: " dni
+read -p "Ingrese su nombre: " name
+read -p "Ingrese su apellido: " surname
+read -p "Ingrese su dirección: " address
+read -p "Ingrese su teléfono: " phoneNumber
+
+echo "Su DNI es: " $dni
+echo "Su nombre es: "$name
+echo "Su apellido es: "$surname
+echo "Su dirección es: "$address
+echo "Su teléfono es: "$phoneNumber
+
+exit 0

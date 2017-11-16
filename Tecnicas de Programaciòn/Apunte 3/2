@@ -1,0 +1,14 @@
+#!/bin/bash
+
+read -p "Ingrese nombre de usuario: " userName
+read -p "Ingrese contraseña: " password
+
+if [[ $userName == "Juan" && $password == "1234" || $userName == "Pedro" && $password == "5678" ]]
+then
+	echo "Hola $userName!!!"
+else
+	echo "ERROR"
+	exit 1
+fi
+
+exit 0

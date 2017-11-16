@@ -1,0 +1,18 @@
+#!/bin/bash
+
+for ((i = 0; i < 5; i++)) {
+	imagen=$imagen"X"
+	echo $imagen
+}
+
+for ((i = 5 - 1; i > 0; i--)) {
+	imagen=""
+
+	for ((k = 0; k < i; k++)) {
+		imagen=$imagen"X"
+	}
+
+	echo $imagen
+}
+
+exit 0

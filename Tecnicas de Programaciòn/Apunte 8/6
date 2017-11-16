@@ -1,0 +1,46 @@
+#!/bin/bash
+. functionLibrary6
+
+repeat="s"
+
+while [ $repeat == "s" ] 
+do
+	result=0
+
+	read -p "Ingrese primer número: " number1
+	read -p "Seleccione operación (s, r, m, d, p): " operation
+	read -p "Ingrese segundo número: " number2
+
+	case $operation in
+		"s") 
+			result=$(add $number1 $number2)
+        ;;
+        
+		"r") 
+            result=$(substract $number1 $number2)
+        ;;
+        
+		"m")
+			result=$(multiply $number1 $number2)
+        ;;
+		
+		"d")
+			result=$(divid $number1 $number2)
+        ;;
+		
+		"p")
+			result=$(pow $number1 $number2)
+        ;;
+		
+		*)
+			echo "ERROR Opción incorrecta"
+        ;;
+	esac
+
+	echo "El resultado es: $result"
+
+	read -p "Desea realizar otro cálculo?(s/n): " repeat
+
+done
+
+exit 0

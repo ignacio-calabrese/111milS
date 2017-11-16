@@ -1,0 +1,25 @@
+#!/bin/bash
+
+function getMax() {
+	max=$1
+
+	if (($2 > $max))
+	then
+		max=$2
+    elif (($3 > $max))
+	then
+		max=$3
+	fi
+
+	echo $max
+}
+
+read -p "Ingrese primer número: " number1
+read -p "Ingrese segundo número: " number2
+read -p "Ingrese tercer número: " number3
+
+result=$(getMax $number1 $number2 $number3)
+
+echo "El mayor de todos es: $result"
+
+exit 0

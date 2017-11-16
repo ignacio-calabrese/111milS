@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -p "Ingrese un número: " number
+
+echo "La tabla de multiplicar del $number es:"
+
+for ((i = 1; i <= 10; i++)) {
+	echo "$number por $i = $(($number * $i))"
+}
+
+exit 0

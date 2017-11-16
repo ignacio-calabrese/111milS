@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function getDividers() {
+	dividers=0
+	Number=$1
+
+	for ((i = 1; i <= $Number; i++)) {
+		if (($Number % $i == 0))
+		then
+			dividers=$(($dividers + 1))
+		fi
+	}
+
+	echo $dividers
+}
+
+read -p "Ingrese un número: " number
+
+result=$(getDividers $number)
+
+echo "La cantidad de divisores de $number son: $result"
+
+exit 0

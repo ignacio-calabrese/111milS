@@ -1,0 +1,26 @@
+#!/bin/bash
+
+function areMultiples() {
+	number1=$1
+	number2=$2
+
+	if (($number1 % $number2 == 0 || $number2 % $number1 == 0))
+	then
+		echo "true"
+	else
+		echo "false"
+	fi
+}
+
+read -p "Ingrese primer numero: " number1
+read -p "Ingrese segundo numero: " number2
+
+
+if [ $(areMultiples $number1 $number2) == true ]
+then
+	echo "Los números $number1 y $number2 son múltiplos"
+else
+	echo "Los números $number1 y $number2 nO son múltiplos"
+fi
+
+exit 0

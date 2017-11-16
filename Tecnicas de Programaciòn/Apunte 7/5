@@ -1,0 +1,19 @@
+#!/bin/bash
+
+greatest=0
+
+while :
+do
+	read -p "Ingrese un número positivo: " number
+		
+   if (($number > $greatest))
+	then
+		greatest=$number
+	fi
+
+	(($number != 0)) || break
+done
+
+echo "El mayor de todos es: $greatest"
+
+exit 0

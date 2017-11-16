@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while :
+do
+	read -p "Ingrese un numero: " number
+
+    (($number <= 100)) || break
+done 
+
+exit 0

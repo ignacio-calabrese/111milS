@@ -1,0 +1,46 @@
+# Biblioteca de funciones apunte 8, ejercicio6
+
+function add() {
+	number1=$1
+	number2=$2
+	
+	echo $(($number1 + $number2))
+}
+
+function substract() {
+	number1=$1
+	number2=$2
+	
+	echo result=$(($number1 - $number2))
+}
+
+function multiply() {
+	number1=$1
+	number2=$2
+	
+	echo result=$(($number1 * $number2))
+}
+
+function divide() {
+	number1=$1
+	number2=$2
+	
+	if (($number2 != 0))
+	then
+		echo result=$(($number1 / $number2))
+	else
+		echo "ERROR! no se puede dividir por cero"
+	fi
+}
+
+function pow() {
+	number1=$1
+	number2=$2
+
+	result=$number1
+
+	for ((i = 1; i < $number2; i++)) {
+		result=$(($result * $number1))
+	}
+    echo $result
+}

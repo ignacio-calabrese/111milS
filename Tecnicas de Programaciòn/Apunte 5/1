@@ -1,0 +1,40 @@
+#!/bin/bash
+
+read -p "Ingrese un número de día(del 1 al 7): " dayNumber
+
+case $dayNumber in
+	"1")
+		echo "Domingo"
+    ;;
+    
+	"2")
+		echo "Lunes"
+    ;;
+	
+	"3")
+		echo "Martes"
+    ;;
+    
+	"4")
+		echo "Miércoles"
+    ;;
+	
+	"5")
+		echo "Jueves"
+    ;;
+	
+	"6")
+		echo "Viernes"
+    ;;
+	
+	"7")
+		echo "Sábado"
+    ;;
+	
+	*)
+		echo "ERROR"
+		exit 1
+    ;;
+esac
+
+exit 0

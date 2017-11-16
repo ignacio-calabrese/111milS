@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function isEven() {
+	number=$1
+
+	if (($number % 2 == 0))
+	then
+		echo "true"
+	else
+		echo "false"
+	fi
+}
+
+read -p "Ingrese número: " number
+
+echo "El valor lógico es $(isEven $number)"
+ 
+exit 0

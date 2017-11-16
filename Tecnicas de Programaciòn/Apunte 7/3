@@ -1,0 +1,19 @@
+#!/bin/bash
+
+while :
+do
+	read -p "Ingrese la base: " base
+
+	(($base <= 0)) || break
+done
+
+while :
+do
+	read -p "Ingrese la altura: " height
+
+	(($height <= 0))|| break
+done
+
+echo "El area es: $(($base * $height))"
+
+exit 0

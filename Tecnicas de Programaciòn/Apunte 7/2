@@ -1,0 +1,17 @@
+#!/bin/bash
+
+another="s"
+
+while [ $another == "s" ]
+do
+	read -p "Ingrese primer numero: " number1
+	read -p "Ingrese segundo numero: " number2
+
+	echo "La suma es $(($number1 + $number2))"
+
+	read -p "Desea realizar otra suma?(s/n): " another
+
+	
+done
+
+exit 0

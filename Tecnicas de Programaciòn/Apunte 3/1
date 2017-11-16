@@ -1,0 +1,12 @@
+#!/bin/bash
+
+read -p "Ingrese un número: " number
+
+if (($number % 2 == 0))
+then
+	echo "El número es múltiplo de 2"
+else
+	echo "El número no es múltiplo de 2"
+fi
+
+exit 0

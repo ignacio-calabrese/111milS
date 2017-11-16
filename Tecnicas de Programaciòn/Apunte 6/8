@@ -1,0 +1,20 @@
+#!/bin/bash
+
+read -p "Ingrese tamaño de la base: " base
+read -p "Ingrese la altura: " height
+
+if (($base < 1 || $height < 1)) 
+then
+	echo "ERROR"
+	exit 1
+fi
+
+for ((i = 0; i <= $base -1; i++)) {
+	line=$line"X"
+}
+
+for ((i = 0; i <= $height -1; i++)) {
+	echo $line
+}
+
+exit 0

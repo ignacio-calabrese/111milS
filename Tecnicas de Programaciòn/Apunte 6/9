@@ -1,0 +1,19 @@
+#!/bin/bash
+
+read -p "Ingrese el número par de la base: " base
+
+if (($base < 1 || $base % 2 == 1))
+then
+	echo "ERROR"
+	exit 1
+fi
+
+for ((i = 0; i <= $base -1; i++)) {
+	line=$line"X"
+}
+
+for ((i = 0; i < $base / 2 ; i++)) {
+	echo $line
+}
+
+exit 0

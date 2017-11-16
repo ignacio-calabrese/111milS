@@ -1,0 +1,18 @@
+#!/bin/bash
+
+function pow3() {
+	number=$1
+	result=$number
+
+	for ((i = 0; i < 2; i++)) {
+		result=$(($result * $number))
+	}
+
+	echo $result
+}
+
+read -p "Ingrese un número: " number
+
+echo "El $number elevado al cubo es: $(pow3 $number)"
+
+exit 0
