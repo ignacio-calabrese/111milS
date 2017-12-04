@@ -1,8 +1,8 @@
 CREATE TABLE customer.contact_information(
 	contact_id	serial PRIMARY KEY,
-	adress		text,	
-	prone		text,
+	address		text,	
+	phone		text,
 	email		text,
-	cuil	integer REFERENCES customer.person(cuil)
+	cuit	text REFERENCES customer.person(cuit) ON DELETE CASCADE
 );
 
