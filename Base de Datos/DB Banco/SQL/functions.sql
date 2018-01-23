@@ -1,3 +1,5 @@
+/*Funciones*/
+
 CREATE OR REPLACE FUNCTION customer.add_physical_person (
     IN p_cuit   text,
     IN p_iibb   text,
@@ -16,7 +18,6 @@ END;
 $$ LANGUAGE plpgsql
 SET search_path FROM CURRENT;
     
-
 CREATE OR REPLACE FUNCTION customer.add_physical_person (
     IN p_cuit   text,
     IN p_iibb   text,
@@ -46,8 +47,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql
 SET search_path FROM CURRENT;
-    
-
 
 CREATE OR REPLACE FUNCTION customer.person (
     IN p_cuit   text,
@@ -146,6 +145,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql VOLATILE
 SET search_path FROM CURRENT;
+
 CREATE OR REPLACE FUNCTION customer.contact_information(
 	IN p_cuit		text,
 	IN p_address	text DEFAULT NULL,	
@@ -175,9 +175,6 @@ END;
 $$ LANGUAGE plpgsql VOLATILE
 SET search_path FROM CURRENT;
 
-
-
-
 CREATE OR REPLACE FUNCTION customer.legal_person ( 
 	IN p_cuit                text,
 	IN p_legal_name          text,
@@ -203,6 +200,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql VOLATILE
 SET search_path FROM CURRENT;
+
 CREATE OR REPLACE FUNcTION accounting.account(
 	IN p_owner_cuit	text,
 	IN p_opening_date	timestamptz,

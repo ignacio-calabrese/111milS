@@ -1,29 +1,97 @@
-CREATE OR REPLACE FUNCTION customer.physical_person_identify_by_dni (
-	IN p_dni            text
-) RETURNS customer.physical_person AS 
+/*Getters*/
+
+CREATE OR REPLACE FUNCTION customer.legal_person_get_cuit (
+	IN p_legal_person             customer.legal_person
+) RETURNS text AS 
 $$
-	SELECT * FROM customer.physical_person WHERE dni = p_dni;
-$$ LANGUAGE sql STRICT STABLE
+	SELECT p_legal_person.cuit;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT; 
+
+CREATE OR REPLACE FUNCTION customer.legal_person_get_legal_name (
+	IN p_legal_person             customer.legal_person
+) RETURNS text AS 
+$$
+	SELECT p_legal_person.legal_name;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT; 
+
+CREATE OR REPLACE FUNCTION customer.legal_person_get_fantasy_name (
+	IN p_legal_person             customer.legal_person
+) RETURNS text AS 
+$$
+	SELECT p_legal_person.fantasy_name;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT; 
+
+CREATE OR REPLACE FUNCTION customer.legal_person_get_constitution_date (
+	IN p_legal_person             customer.legal_person
+) RETURNS timestamp with time zone AS 
+$$
+	SELECT p_legal_person.constitution_date;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT; 
+
+CREATE OR REPLACE FUNCTION customer.legal_person_get_iibb (
+	IN p_legal_person             customer.legal_person
+) RETURNS text AS 
+$$
+	SELECT iibb FROM customer.person WHERE cuit = p_legal_person.cuit;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT; 
+
+CREATE OR REPLACE FUNCTION customer.physical_person_get_dni (
+	IN p_physical_person          customer.physical_person
+) RETURNS text AS
+$$
+	SELECT p_physical_person.dni;
+$$ LANGUAGE sql STABLE STRICT
 SET search_path FROM CURRENT;
-CREATE OR REPLACE FUNCTION customer.physical_person_identify_by_cuit (
-	IN p_cuit           text
-) RETURNS customer.physical_person AS 
+
+CREATE OR REPLACE FUNCTION customer.physical_person_get_surname (
+	IN p_physical_person          customer.physical_person
+) RETURNS text AS
 $$
-	SELECT * FROM customer.physical_person WHERE cuit = p_cuit;
-$$ LANGUAGE sql STRICT STABLE
+	SELECT p_physical_person.surname;
+$$ LANGUAGE sql STABLE STRICT
 SET search_path FROM CURRENT;
-CREATE OR REPLACE FUNCTION customer.physical_person_lookup (
-	IN p_surname        text
-) RETURNS SETOF customer.physical_person AS 
+
+CREATE OR REPLACE FUNCTION customer.physical_person_get_name (
+	IN p_physical_person          customer.physical_person
+) RETURNS text AS
 $$
-	SELECT * FROM customer.physical_person WHERE surname = p_surname;
-$$ LANGUAGE sql STRICT STABLE
+	SELECT p_physical_person.name;
+$$ LANGUAGE sql STABLE STRICT
 SET search_path FROM CURRENT;
-CREATE OR REPLACE FUNCTION customer.physical_person_lookup (
-	IN p_name           text,
-	IN p_surname        text
-) RETURNS SETOF customer.physical_person AS 
+
+CREATE OR REPLACE FUNCTION customer.physical_person_get_birthday (
+	IN p_physical_person          customer.physical_person
+) RETURNS timestamp with time zone AS
 $$
-	SELECT * FROM customer.physical_person WHERE (name, surname) = (p_name, p_surname);
-$$ LANGUAGE sql STRICT STABLE
+	SELECT p_physical_person.birthday;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT;
+
+CREATE OR REPLACE FUNCTION customer.physical_person_get_cuit (
+	IN p_physical_person          customer.physical_person
+) RETURNS text AS
+$$
+	SELECT p_physical_person.cuit;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT;
+
+CREATE OR REPLACE FUNCTION customer.physical_person_get_age (
+	IN p_physical_person          customer.physical_person
+) RETURNS integer AS
+$$
+	SELECT date_part('years', age(now(), p_physical_person.birthday))::integer;
+$$ LANGUAGE sql STABLE STRICT
+SET search_path FROM CURRENT;
+
+CREATE OR REPLACE FUNCTION customer.physical_person_get_iibb (
+	IN p_physical_person          customer.physical_person
+) RETURNS text AS
+$$
+	SELECT iibb FROM customer.person WHERE cuit = p_physical_person.cuit;
+$$ LANGUAGE sql STABLE STRICT
 SET search_path FROM CURRENT;
