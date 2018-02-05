@@ -9,7 +9,7 @@ public class jdbcExample {
         Connection dbConnection = null;
         String url = "jdbc:postgresql://localhost:5432/prueba";
         String username = "ignacio";
-        String password = "7126";
+        String password = "1234";
         
         try {
             Class.forName("org.postgresql.Driver");
